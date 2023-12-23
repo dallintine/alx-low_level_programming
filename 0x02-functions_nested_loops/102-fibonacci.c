@@ -1,24 +1,27 @@
 #include <stdio.h>
 
 /**
- *main - Prints the add of the Fibonacci numbers
+ * main - first 50 fibonacci number
  *
- * Return: Always 0.
+ * Created by: Sanctus-Peter
+ * cc: 5th july, 2022
+ *
+ * Return: 0 if successful
  */
 int main(void)
 {
-	int c;
-	long int n1, n2, fn;
+	long int n1 = 1, result, n2 = 2, nLast = 50;
+	int ii;
 
-	n1 = 1;
-	n2 = 2;
-	printf("%ld, %ld", n1, n2);
-	for (c = 0; c < 48; c++)
+	printf("%lu, %lu, ", n1, n2);
+	for (ii = 2; ii < nLast; ii++)
 	{
-		fn = n1 + n2;
-		printf(", %ld", fn);
+		result = n1 + n2;
 		n1 = n2;
-		n2 = fn;
+		n2 = result;
+		printf("%lu", result);
+		if (ii != nLast - 1)
+			printf(", ");
 	}
 	printf("\n");
 	return (0);

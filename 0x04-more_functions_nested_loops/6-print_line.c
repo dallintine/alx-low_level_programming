@@ -1,18 +1,21 @@
 #include "main.h"
 
 /**
- * print_line - prints straight line n times.
+ * print_line - print lines (_) n number of times
+ * @n: integer variable
  *
- * @n: times straight line is printed.
- * Return: no return.
+ * Created by: Sanctus-Peter
+ * cc: 7th july, 2022
  */
+
 void print_line(int n)
 {
-	int i;
-
-	for (i = 0; i < n; i++)
+	if (n < 1)
+		_putchar('\n');
+	else
 	{
-		_putchar(95);
+		while (n--)
+			_putchar('_');
+		_putchar('\n');
 	}
-	_putchar('\n');
 }

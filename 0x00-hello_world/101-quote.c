@@ -1,11 +1,15 @@
+#include <stdio.h>
 #include <unistd.h>
+
 /**
- *main-program entry point.
- *
- *Return: 1 on success.
+ * main - Prints out the last part of a quote in the standard error.
+ * Return: 1 if success.
  */
+
 int main(void)
 {
-	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
+	char var[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+
+	write(2, var, sizeof(var) - 1);
 	return (1);
 }

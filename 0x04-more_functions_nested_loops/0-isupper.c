@@ -1,18 +1,19 @@
 #include "main.h"
+#include <ctype.h>
 
 /**
- * _isupper - checks if parameter is an uppercase character.
- * @c: input character.
- * Return: 1 if is an uppercase character, 0 in other case.
+ * _isupper - check if a character is uppercase
+ * @c: variable whose character is to be checked
+ *
+ * Created by: Sanctus-Peter
+ * cc: 7th july, 2022
+ *
+ * Return: 1 if is uppercase, 0 if otherwise
  */
+
 int _isupper(int c)
 {
-	if (c >= 65 && c <= 90)
-	{
+	if (isupper(c))
 		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }

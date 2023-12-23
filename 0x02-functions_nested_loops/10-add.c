@@ -1,15 +1,17 @@
 #include "main.h"
 
 /**
- * add - Adds two integers and returns
- * the result.
+ * add - add 2 integers
+ * @var1: first integer
+ * @var2: second integer
  *
- * @a: number one.
- * @b: number two.
+ * Created by: Sanctus-Peter
+ * cc: 5th july, 2022
  *
- * Return: Add of number one and number two.
+ * Return: the integer sum of var1 and var2
  */
-int add(int a, int b)
+
+int add(int var1, int var2)
 {
-	return (a + b);
+	return (var1 + var2);
 }

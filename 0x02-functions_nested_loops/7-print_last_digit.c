@@ -1,22 +1,25 @@
 #include "main.h"
+
 /**
- * print_last_digit-prints the last digit of an interger.
- * @a:number to compute last digit.
- * Return:last digit.
+ * print_last_digit - print last digit
+ * @var: variable whose last digit is to be printed
+ *
+ * Created - Sanctus-Peter
+ * cc: 5th july, 2022
+ *
+ * Return: the last digit
  */
 
-
-
-int print_last_digit(int a)
+int print_last_digit(int var)
 {
-	int last_digit;
+	int result;
 
-	last_digit = a %  10;
-	if (last_digit < 0)
-	{
-		last_digit = last_digit * -1;
-	}
-	_putchar(last_digit + '0');
-	return (last_digit);
+	if (var < 0)
+		result = -1 * (var % 10);
+	else
+		result = var % 10;
 
+	_putchar ((result) + '0');
+
+	return (result);
 }

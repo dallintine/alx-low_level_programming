@@ -1,25 +1,27 @@
 #include <stdio.h>
+
 /**
- *main-program entry point.
- *Return:0 success, non zero error.
+ * main - output all single digit number of base 10
+ *
+ * Return: 0 if successful
  */
 int main(void)
 {
-	int num;
+	int var;
 
-	for (num = '0'; num <= '9'; num++)
+	for (var = 0; var < 10; var++)
 	{
-		putchar(num);
-		if (num == '9')
-		{
-			break;
-		}
-		else
+		putchar((var % 10) + '0');
+		if (var >= 0 && var < 9)
 		{
 			putchar(',');
 			putchar(' ');
 		}
+		else
+			continue;
 	}
+
 	putchar('\n');
+
 	return (0);
 }

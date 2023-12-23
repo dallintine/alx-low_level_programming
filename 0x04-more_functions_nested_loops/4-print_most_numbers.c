@@ -1,18 +1,26 @@
 #include "main.h"
 
 /**
- * print_most_numbers - prints numbers between 0 to 9
- * (neither 2 nor 4).
- * Return: no return.
+ * print_most_numbers - print numbers from 0-9 excluding 2 and 4
+ *
+ * Created by: sanctus-Peter
+ * cc: 7th july, 2022
  */
+
 void print_most_numbers(void)
 {
-	int ch;
+	int var = 0;
 
-	for (ch = 48; ch < 58; ch++)
-	{
-		if (ch != 50 && ch != 52)
-			_putchar(ch);
-	}
+	do {
+		if (var == 4 || var == 2)
+		{
+			var++;
+			continue;
+		}
+		else
+			_putchar(var + '0');
+		var++;
+	} while (var < 10);
+
 	_putchar('\n');
 }

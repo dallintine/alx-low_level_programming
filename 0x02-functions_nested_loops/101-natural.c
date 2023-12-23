@@ -1,20 +1,23 @@
 #include <stdio.h>
 
 /**
- * main - Prints natural numbers below 1024 that are
- * multiplies of 3 or 5
+ * main - find sum of multiples of 3 and 5 less than 1024
  *
- * Return: Always 0.
+ * Created by: Sanctus-Peter
+ * cc: 5th july 2022
+ *
+ * Return: 0 if successful
  */
+
 int main(void)
 {
-	int a, b;
+	int ii, _sum;
 
-	for (a = 1; a < 1024; a++)
+	for (ii = 3; ii < 1024; ii++)
 	{
-		if ((a % 3) == 0 || (a % 5) == 0)
-			b += a;
+		if (ii % 3 == 0 || ii % 5 == 0)
+			_sum += ii;
 	}
-	printf("%d\n", b);
+	printf("%d\n", _sum);
 	return (0);
 }

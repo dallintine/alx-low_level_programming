@@ -1,35 +1,37 @@
 #include <stdio.h>
 
 /**
- * main-entry point
+ * main - output all single digit number of base 10
  *
- * Description: prints all possible combinations of two two-digit numbers
- *
- * Return:0 success, non zero fail
+ * Return: 0 if successful
  */
-
 int main(void)
 {
-	int i, j;
+	int var;
 
-	for (i = 0; i < 99; i++)
+	for (var = 0; var < 99; var++)
 	{
-		for (j = i + 1; j <= 99; j++)
+		int ii;
+
+		for (ii = var + 1; ii < 100; ii++)
 		{
-			putchar('0' + i / 10);
-			putchar('0' + i % 10);
-
+			putchar((var / 10) + '0');
+			putchar((var % 10) + '0');
 			putchar(' ');
+			putchar((ii / 10) + '0');
+			putchar((ii % 10) + '0');
 
-			putchar('0' + j / 10);
-			putchar('0' + j % 10);
-
-			if (i == 98 && j == 99)
-				break;
-			putchar(',');
-			putchar(' ');
+			if (var != 98)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+			else
+				continue;
 		}
 	}
+
 	putchar('\n');
+
 	return (0);
 }

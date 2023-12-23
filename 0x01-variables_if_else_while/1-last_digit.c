@@ -1,30 +1,27 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
+
 /**
- *main-program entry point.
+ * main - check if a random number is positive or negative
  *
- *Return:0 if no error, non-zero value if error.
+ * Return: 0 if error
  */
 int main(void)
 {
 	int n;
-	int ldigit;
+	int nLast;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	ldigit = n % 10;
-	if (ldigit > 5)
-	{
-		printf("Last digit of %d is %d and is greater than 5\n", n, ldigit);
-	}
-	else if (ldigit == 0)
-	{
-		printf("Last digit of %d is %d and is 0\n", n, ldigit);
-	}
-	else if (ldigit < 6 && ldigit != 0)
-	{
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, ldigit);
-	}
+	nLast = n % 10;
+
+	if (nLast > 5)
+		printf("Last digit of %d is %d and is greater than 5\n", n, nLast);
+	else if (nLast < 6 && nLast != 0)
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, nLast);
+	else
+		printf("Last digit of %d is %d and is 0\n", n, nLast);
+
 	return (0);
 }

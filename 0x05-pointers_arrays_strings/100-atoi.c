@@ -1,45 +1,42 @@
+#include <stdlib.h>
 #include "main.h"
+#include <limits.h>
+#include <string.h>
 
 /**
- * _atoi - converts a string to an integer.
- * @s: input string.
- * Return: integer.
+ * _atoi - coverts a string to integer
+ * @str: pointer to string to be converted
+ *
+ * Return: converted string
+ *
+ * Created by: Sanctus-Peter
+ * cc: 12th july, 2022.
  */
-int _atoi(char *s)
+
+int _atoi(char *str)
 {
-	int i, d, n, len, f, digit;
+	int sign = 1, base = 0, i = 0;
 
-	i = 0;
-	d = 0;
-	n = 0;
-	len = 0;
-	f = 0;
-	digit = 0;
-
-	while (s[len] != '\0')
-		len++;
-
-	while (i < len && f == 0)
+	for (i = 0; str[i] != '\0' && (str[i] < '0' || str[i] > '9'); i++)
 	{
-		if (s[i] == '-')
-			++d;
-
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			digit = s[i] - '0';
-			if (d % 2)
-				digit = -digit;
-			n = n * 10 + digit;
-			f = 1;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
-				break;
-			f = 0;
-		}
-		i++;
+		if (str[i] == '-' || str[i] == '+')
+			sign *= 1 - 2 * (str[i] == '-');
+		if (str[i + 1] == '\0')
+			return (0);
 	}
 
-	if (f == 0)
-		return (0);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		if (base > INT_MAX / 10	|| (base == INT_MAX / 10
+			&& str[i] - '0' > 7))
+		{
+			if (sign == 1)
+				return (INT_MAX);
+			else
+				return (INT_MIN);
+		}
+		base = 10 * base + (str[i++] - '0');
+	}
 
-	return (n);
+	return (base * sign);
 }

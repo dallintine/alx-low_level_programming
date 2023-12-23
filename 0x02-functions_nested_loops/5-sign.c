@@ -1,15 +1,18 @@
-# include "main.h"
+#include "main.h"
+
 /**
- * print_sign-check the sign of a number.
+ * print_sign - print the sign of the input
+ * @n: the variable to be checked
  *
- * @n:Number whose sign is to be checked.
- * Return:1-if n is greater than 0: 0- if n equals 0:-1-if n is less than 0
+ * Created - Sanctus-Peter
+ * cc: 5th july, 2022
+ *
+ * Return: 1 if positive, 0 if zero, -1 if negative
  */
-
-
 
 int print_sign(int n)
 {
+
 	if (n > 0)
 	{
 		_putchar('+');
@@ -17,7 +20,7 @@ int print_sign(int n)
 	}
 	else if (n < 0)
 	{
-		_putchar ('-');
+		_putchar('-');
 		return (-1);
 	}
 	else
@@ -25,4 +28,5 @@ int print_sign(int n)
 		_putchar('0');
 		return (0);
 	}
+
 }

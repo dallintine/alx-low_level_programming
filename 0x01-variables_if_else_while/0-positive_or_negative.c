@@ -1,25 +1,24 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
+
 /**
- * main-program entry point.
- * Return:0-no error,non zero value if error.
- **/
+ * main - check if a random number is positive or negative
+ * Return: 0 if error
+ */
 int main(void)
 {
 	int n;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	if (n >  0)
-	{
+
+	if (n > 0)
 		printf("%d is positive\n", n);
-	}
 	else if (n < 0)
-	{
 		printf("%d is negative\n", n);
-	}
-	else if (n == 0)
+	else
 		printf("%d is zero\n", n);
+
 	return (0);
 }

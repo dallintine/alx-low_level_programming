@@ -1,37 +1,40 @@
 #include <stdio.h>
+
 /**
- * main-progrtam entry point
- * Return:0 success, non zero fail
+ * main - output all single digit number of base 10
+ *
+ * Return: 0 if successful
  */
 int main(void)
 {
-	int m, i, j;
+	int var;
 
-	for (i = '0'; i <= '9'; i++)
+	for (var = 0; var < 8; var++)
 	{
-		for (j = '0'; j <= '9'; j++)
+		int ii;
+
+		for (ii = var + 1; ii < 9; ii++)
 		{
-			for (m = '0'; m <= '9'; m++)
+			int jj;
+
+			for (jj = ii + 1; jj < 10; jj++)
 			{
-				if (i < j && j < m)
+				putchar((var % 10) + '0');
+				putchar((ii % 10) + '0');
+				putchar((jj % 10) + '0');
+
+				if (var != 7)
 				{
-					putchar(i);
-					putchar(j);
-					putchar(m);
-					if (i == '7' && j == '8' && m == '9')
-					{
-						break;
-					}
-					else
-					{
-						putchar(',');
-						putchar(' ');
-					}
+					putchar(',');
+					putchar(' ');
 				}
+				else
+					continue;
 			}
 		}
 	}
-	putchar ('\n');
-				return (0);
-}
 
+	putchar('\n');
+
+	return (0);
+}
